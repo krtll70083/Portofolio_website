@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foto Studio Cahaya — Abadikan Momenmu</title>
+  <meta name="description" content="Studio foto profesional di Jakarta untuk wisuda, pernikahan, keluarga, dan portrait. Hasil terbaik dengan harga terjangkau. Hubungi kami sekarang!" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F5F0E8;
+      --warm-white: #FAF8F4;
+      --charcoal: #1A1814;
+      --brown: #8B6F47;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --muted: #9E9589;
+      --section-pad: 100px 40px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 48px;
+      background: rgba(250,248,244,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139,111,71,0.12);
+      animation: fadeDown 0.8s ease forwards;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--muted);
+      text-decoration: none; transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+
+    .nav-cta {
+      background: var(--gold); color: var(--charcoal);
+      padding: 10px 24px; border-radius: 2px;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 88px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 60px 80px 80px;
+      position: relative; z-index: 2;
+      animation: fadeLeft 1s 0.3s ease both;
+    }
+
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-bottom: 28px;
+    }
+
+    .hero-tag::before {
+      content: ''; width: 32px; height: 1px; background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 1.05;
+      font-weight: 900;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 16px; line-height: 1.8;
+      color: var(--muted); max-width: 420px;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions { display: flex; gap: 16px; align-items: center; }
+
+    .btn-primary {
+      background: var(--charcoal); color: var(--cream);
+      padding: 16px 36px; border-radius: 2px;
+      font-size: 14px; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--brown); transform: translateY(-2px); }
+
+    .btn-ghost {
+      color: var(--charcoal); font-size: 14px; font-weight: 500;
+      letter-spacing: 0.04em; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--gold); padding-bottom: 2px;
+      transition: color 0.3s;
+    }
+    .btn-ghost:hover { color: var(--gold); }
+
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 60px;
+      padding-top: 40px; border-top: 1px solid rgba(139,111,71,0.15);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; font-weight: 700; color: var(--charcoal);
+      line-height: 1;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* Hero Right - Photo Collage */
+    .hero-right {
+      position: relative;
+      background: var(--cream);
+      overflow: hidden;
+      animation: fadeRight 1s 0.5s ease both;
+    }
+
+    @keyframes fadeRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero-img-main {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Decorative overlay photo */
+    .hero-photo-overlay {
+      position: absolute; bottom: 40px; left: -40px;
+      width: 200px; height: 260px;
+      background: var(--warm-white);
+      border: 6px solid var(--warm-white);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .hero-photo-overlay img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    /* Fake photo grid using CSS art */
+    .photo-grid-hero {
+      width: 100%; height: 100%;
+      display: grid;
+      grid-template-rows: 60% 40%;
+      grid-template-columns: 60% 40%;
+    }
+
+    .ph { overflow: hidden; position: relative; }
+
+    .ph::after {
+      content: attr(data-label);
+      position: absolute; bottom: 12px; left: 12px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.8); font-weight: 500;
+    }
+
+    .ph-1 {
+      grid-column: 1 / 2; grid-row: 1 / 2;
+      background: linear-gradient(135deg, #2C2416 0%, #5C4A2A 50%, #8B6F47 100%);
+    }
+
+    .ph-2 {
+      grid-column: 2 / 3; grid-row: 1 / 2;
+      background: linear-gradient(135deg, #D4B896 0%, #C9A84C 100%);
+    }
+
+    .ph-3 {
+      grid-column: 1 / 3; grid-row: 2 / 3;
+      background: linear-gradient(90deg, #1A1814 0%, #3D3227 50%, #6B5437 100%);
+    }
+
+    /* Silhouette SVG figures in hero photos */
+    .silhouette {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      opacity: 0.15;
+    }
+
+    .ph-badge {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--gold); color: var(--charcoal);
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 6px 12px; font-weight: 600;
+    }
+
+    /* Camera icon decoration */
+    .camera-deco {
+      position: absolute; top: 40px; left: 40px; z-index: 10;
+      width: 56px; height: 56px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 8px 24px rgba(201,168,76,0.4);
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--charcoal);
+      padding: 18px 0; overflow: hidden;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: flex; gap: 0; width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      display: flex; align-items: center; gap: 20px;
+      padding: 0 32px;
+      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--muted); white-space: nowrap; font-weight: 500;
+    }
+
+    .marquee-dot { color: var(--gold); font-size: 18px; }
+
+    /* ── LAYANAN ── */
+    .layanan {
+      padding: var(--section-pad);
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 64px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    .section-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 56px);
+      line-height: 1.1; font-weight: 700;
+    }
+
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .section-sub {
+      font-size: 14px; color: var(--muted); line-height: 1.8;
+      max-width: 300px; text-align: right;
+    }
+
+    .layanan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .layanan-card {
+      background: var(--cream);
+      padding: 48px 36px;
+      position: relative; overflow: hidden;
+      transition: transform 0.4s, background 0.4s;
+      cursor: default;
+    }
+
+    .layanan-card:hover {
+      background: var(--charcoal);
+      transform: translateY(-4px);
+    }
+
+    .layanan-card:hover .layanan-title,
+    .layanan-card:hover .layanan-price { color: var(--cream); }
+
+    .layanan-card:hover .layanan-desc { color: var(--muted); }
+    .layanan-card:hover .layanan-icon { background: var(--gold); }
+
+    .layanan-icon {
+      width: 52px; height: 52px;
+      background: var(--charcoal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 28px;
+      transition: background 0.4s;
+    }
+
+    .layanan-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 700;
+      margin-bottom: 12px; transition: color 0.4s;
+    }
+
+    .layanan-desc {
+      font-size: 14px; color: var(--muted); line-height: 1.8;
+      margin-bottom: 24px; transition: color 0.4s;
+    }
+
+    .layanan-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--gold); transition: color 0.4s;
+    }
+
+    .layanan-price span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; color: var(--muted); font-weight: 400;
+    }
+
+    .layanan-num {
+      position: absolute; top: 24px; right: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 64px; font-weight: 900;
+      color: rgba(0,0,0,0.04); line-height: 1;
+      transition: color 0.4s;
+    }
+
+    .layanan-card:hover .layanan-num { color: rgba(255,255,255,0.04); }
+
+    /* ── PROCESS ── */
+    .process {
+      background: var(--charcoal);
+      padding: var(--section-pad);
+      position: relative; overflow: hidden;
+    }
+
+    .process::before {
+      content: 'CAHAYA';
+      position: absolute; top: -20px; left: -20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 200px; font-weight: 900;
+      color: rgba(255,255,255,0.02);
+      line-height: 1; pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .process-inner { max-width: 1200px; margin: 0 auto; }
+
+    .process .section-eyebrow { color: var(--gold); }
+
+    .process .section-title { color: var(--cream); }
+
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 40px; margin-top: 64px;
+    }
+
+    .step {
+      position: relative;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .step:nth-child(1) { animation-delay: 0.1s; }
+    .step:nth-child(2) { animation-delay: 0.2s; }
+    .step:nth-child(3) { animation-delay: 0.3s; }
+    .step:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px; font-weight: 900;
+      color: var(--gold); line-height: 1;
+      opacity: 0.3; margin-bottom: -10px;
+    }
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--cream); margin-bottom: 12px;
+    }
+
+    .step-desc {
+      font-size: 14px; color: var(--muted); line-height: 1.8;
+    }
+
+    .step-line {
+      position: absolute; top: 36px; left: calc(100% - 20px);
+      width: 40px; height: 1px; background: var(--gold);
+      opacity: 0.3;
+    }
+
+    .step:last-child .step-line { display: none; }
+
+    /* ── PORTOFOLIO ── */
+    .porto {
+      padding: var(--section-pad);
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .porto-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: 12px;
+      margin-top: 64px;
+    }
+
+    .porto-item {
+      position: relative; overflow: hidden;
+      border-radius: 2px; cursor: pointer;
+    }
+
+    .porto-item:first-child { grid-row: 1 / 3; }
+
+    .porto-bg {
+      width: 100%; height: 100%;
+      transition: transform 0.6s ease;
+    }
+
+    .porto-item:hover .porto-bg { transform: scale(1.05); }
+
+    .porto-bg-1 { background: linear-gradient(135deg, #2C2416, #8B6F47); }
+    .porto-bg-2 { background: linear-gradient(135deg, #C9A84C, #8B6F47); }
+    .porto-bg-3 { background: linear-gradient(135deg, #1A1814, #5C4A2A); }
+    .porto-bg-4 { background: linear-gradient(135deg, #8B6F47, #C9A84C); }
+    .porto-bg-5 { background: linear-gradient(135deg, #3D3227, #9E9589); }
+
+    .porto-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,24,20,0.8) 0%, transparent 60%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 24px;
+      opacity: 0; transition: opacity 0.4s;
+    }
+
+    .porto-item:hover .porto-overlay { opacity: 1; }
+
+    .porto-cat {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 6px;
+    }
+
+    .porto-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; color: var(--cream); font-weight: 700;
+    }
+
+    /* Camera icon inside photos */
+    .porto-icon {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      font-size: 48px; opacity: 0.1;
+    }
+
+    /* ── TESTIMONI ── */
+    .testimoni {
+      background: var(--cream); padding: var(--section-pad);
+    }
+
+    .testimoni-inner { max-width: 1200px; margin: 0 auto; }
+
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 64px;
+    }
+
+    .testi-card {
+      background: var(--warm-white);
+      padding: 36px 32px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .testi-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .testi-stars {
+      color: var(--gold); font-size: 14px;
+      letter-spacing: 2px; margin-bottom: 20px;
+    }
+
+    .testi-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-style: italic;
+      line-height: 1.7; color: var(--charcoal);
+      margin-bottom: 28px;
+    }
+
+    .testi-name { font-weight: 500; font-size: 14px; color: var(--charcoal); }
+    .testi-role { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+
+    .testi-divider {
+      width: 32px; height: 1px; background: var(--gold);
+      margin: 10px 0;
+    }
+
+    /* ── KONTAK ── */
+    .kontak {
+      padding: var(--section-pad);
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+
+    .kontak-left .section-title { margin-bottom: 24px; }
+
+    .kontak-left p {
+      font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 40px;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 20px; }
+
+    .contact-item {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px;
+      background: var(--cream);
+      transition: background 0.3s;
+    }
+
+    .contact-item:hover { background: #EDE8DC; }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--charcoal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+
+    .contact-info strong {
+      display: block; font-size: 13px; font-weight: 600;
+      letter-spacing: 0.04em; margin-bottom: 2px;
+    }
+
+    .contact-info span { font-size: 13px; color: var(--muted); }
+
+    .kontak-right {
+      background: var(--charcoal);
+      padding: 48px;
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--cream); margin-bottom: 32px;
+    }
+
+    .form-group { margin-bottom: 20px; }
+
+    .form-group label {
+      display: block; font-size: 11px;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--cream); padding: 14px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; outline: none;
+      transition: border-color 0.3s;
+      border-radius: 0;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group select option { background: var(--charcoal); }
+
+    .form-group textarea { height: 100px; resize: none; }
+
+    .btn-submit {
+      width: 100%; background: var(--gold);
+      color: var(--charcoal); padding: 16px;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: none; cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-submit:hover { background: var(--gold-light); }
+
+    /* WA Float */
+    .wa-float {
+      position: fixed; bottom: 32px; right: 32px; z-index: 200;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+      text-decoration: none;
+      animation: pulse 2.5s infinite;
+      transition: transform 0.3s;
+    }
+
+    .wa-float:hover { transform: scale(1.1); }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
+      50%       { box-shadow: 0 8px 48px rgba(37,211,102,0.7); }
+    }
+
+    /* ── MAP ── */
+    .map-section {
+      background: var(--cream); padding: 80px 40px;
+    }
+
+    .map-inner { max-width: 1200px; margin: 0 auto; }
+
+    .map-top {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .map-embed {
+      width: 100%; height: 380px;
+      border: none; filter: grayscale(20%) contrast(1.05);
+    }
+
+    .jam-buka {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; margin-top: 2px;
+    }
+
+    .jam-item {
+      background: var(--charcoal); color: var(--cream);
+      padding: 24px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .jam-day { font-size: 13px; letter-spacing: 0.06em; color: var(--muted); }
+    .jam-time { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0F0D0A;
+      padding: 60px 40px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 32px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--cream);
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 13px; color: var(--muted); font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-socials { display: flex; gap: 16px; }
+
+    .social-btn {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; text-decoration: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .social-btn:hover { border-color: var(--gold); background: var(--gold); }
+
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 12px; color: var(--muted); letter-spacing: 0.04em;
+    }
+
+    .footer-copy span { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { height: 50vw; }
+      .hero-left { padding: 60px 24px; }
+      .layanan-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .porto-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .porto-item:first-child { grid-row: auto; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .kontak { grid-template-columns: 1fr; gap: 40px; }
+      .jam-buka { grid-template-columns: 1fr; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .section-sub { text-align: left; }
+      .map-top { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Foto Studio <span>Cahaya</span></a>
+    <ul class="nav-links">
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#portofolio">Portofolio</a></li>
+      <li><a href="#testimoni">Testimoni</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <a href="https://wa.me/6281234567890?text=Halo%20Studio%20Cahaya%2C%20saya%20ingin%20booking%20sesi%20foto" class="nav-cta" target="_blank">Book Sekarang</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Studio Foto Profesional · Jakarta</div>
+      <h1 class="hero-title">
+        Abadikan<br>Setiap<br><em>Momen Berharga</em>
+      </h1>
+      <p class="hero-desc">
+        Foto Studio Cahaya hadir untuk mengabadikan momen terpenting dalam hidupmu — wisuda, pernikahan, keluarga, hingga portrait profesional — dengan hasil yang tak terlupakan.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/6281234567890?text=Halo%20Studio%20Cahaya%2C%20saya%20ingin%20booking%20sesi%20foto" class="btn-primary" target="_blank">📅 Book Sesi Foto</a>
+        <a href="#portofolio" class="btn-ghost">Lihat Portofolio →</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Klien Puas</div>
+        </div>
+        <div>
+          <div class="stat-num">5★</div>
+          <div class="stat-label">Rating Google</div>
+        </div>
+        <div>
+          <div class="stat-num">4 Thn</div>
+          <div class="stat-label">Pengalaman</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="camera-deco">📷</div>
+      <div class="photo-grid-hero">
+        <div class="ph ph-1">
+          <div class="ph-badge">Wisuda</div>
+          <svg class="silhouette" width="120" height="180" viewBox="0 0 120 180">
+            <ellipse cx="60" cy="30" rx="22" ry="22" fill="white"/>
+            <rect x="30" y="55" width="60" height="90" rx="8" fill="white"/>
+            <rect x="10" y="60" width="25" height="60" rx="6" fill="white"/>
+            <rect x="85" y="60" width="25" height="60" rx="6" fill="white"/>
+            <rect x="35" y="145" width="20" height="35" rx="4" fill="white"/>
+            <rect x="65" y="145" width="20" height="35" rx="4" fill="white"/>
+          </svg>
+        </div>
+        <div class="ph ph-2">
+          <svg class="silhouette" width="100" height="160" viewBox="0 0 100 160">
+            <ellipse cx="50" cy="26" rx="18" ry="18" fill="white"/>
+            <path d="M20 60 Q50 45 80 60 L85 130 H15 Z" fill="white"/>
+            <rect x="22" y="130" width="18" height="30" rx="4" fill="white"/>
+            <rect x="60" y="130" width="18" height="30" rx="4" fill="white"/>
+          </svg>
+        </div>
+        <div class="ph ph-3" style="display:flex;align-items:center;justify-content:center;gap:24px;">
+          <div style="text-align:center;color:rgba(255,255,255,0.15)">
+            <div style="font-size:48px;font-family:'Playfair Display',serif;font-style:italic;font-weight:700">Cahaya</div>
+            <div style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;margin-top:4px">Foto Studio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Wisuda</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Pernikahan</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Keluarga</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Portrait Profesional</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Produk</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Bayi & Maternity</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Wisuda</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Pernikahan</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Keluarga</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Portrait Profesional</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Produk</div>
+      <div class="marquee-item"><span class="marquee-dot">✦</span> Foto Bayi & Maternity</div>
+    </div>
+  </div>
+
+  <!-- LAYANAN -->
+  <section id="layanan" class="layanan">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Paket Kami</div>
+        <h2 class="section-title">Layanan <em>Studio</em></h2>
+      </div>
+      <p class="section-sub">Setiap paket mencakup editing profesional dan file digital resolusi tinggi.</p>
+    </div>
+
+    <div class="layanan-grid">
+      <div class="layanan-card">
+        <div class="layanan-num">01</div>
+        <div class="layanan-icon">🎓</div>
+        <div class="layanan-title">Foto Wisuda</div>
+        <div class="layanan-desc">Abadikan momen kelulusan dengan toga dan properti eksklusif studio kami. Termasuk 2 outfit changes.</div>
+        <div class="layanan-price">Rp 299.000 <span>/ sesi</span></div>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-num">02</div>
+        <div class="layanan-icon">💍</div>
+        <div class="layanan-title">Foto Prewedding</div>
+        <div class="layanan-desc">Sesi foto romantis pra-nikah dengan konsep custom sesuai keinginan pasangan. Indoor & outdoor tersedia.</div>
+        <div class="layanan-price">Rp 599.000 <span>/ sesi</span></div>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-num">03</div>
+        <div class="layanan-icon">👨‍👩‍👧</div>
+        <div class="layanan-title">Foto Keluarga</div>
+        <div class="layanan-desc">Momen kebersamaan keluarga yang hangat dan penuh kenangan. Cocok untuk semua ukuran keluarga.</div>
+        <div class="layanan-price">Rp 399.000 <span>/ sesi</span></div>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-num">04</div>
+        <div class="layanan-icon">🧑‍💼</div>
+        <div class="layanan-title">Portrait Profesional</div>
+        <div class="layanan-desc">Foto CV, LinkedIn, atau identitas profesional dengan pencahayaan studio terbaik.</div>
+        <div class="layanan-price">Rp 149.000 <span>/ sesi</span></div>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-num">05</div>
+        <div class="layanan-icon">👶</div>
+        <div class="layanan-title">Foto Bayi & Maternity</div>
+        <div class="layanan-desc">Momen kehamilan dan kelahiran yang sakral, diabadikan dengan lembut dan artistik.</div>
+        <div class="layanan-price">Rp 499.000 <span>/ sesi</span></div>
+      </div>
+      <div class="layanan-card">
+        <div class="layanan-num">06</div>
+        <div class="layanan-icon">📦</div>
+        <div class="layanan-title">Foto Produk</div>
+        <div class="layanan-desc">Tampilkan produk usahamu dengan foto berkualitas tinggi untuk keperluan e-commerce dan media sosial.</div>
+        <div class="layanan-price">Rp 249.000 <span>/ sesi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROSES -->
+  <section class="process">
+    <div class="process-inner">
+      <div class="section-eyebrow">Cara Kerja</div>
+      <h2 class="section-title">Mudah & <em>Menyenangkan</em></h2>
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-line"></div>
+          <div class="step-num">01</div>
+          <div class="step-title">Book via WA</div>
+          <div class="step-desc">Hubungi kami via WhatsApp untuk konsultasi gratis dan pemilihan paket yang sesuai kebutuhanmu.</div>
+        </div>
+        <div class="step">
+          <div class="step-line"></div>
+          <div class="step-num">02</div>
+          <div class="step-title">Tentukan Konsep</div>
+          <div class="step-desc">Diskusikan tema, outfit, dan properti bersama fotografer kami sebelum hari sesi.</div>
+        </div>
+        <div class="step">
+          <div class="step-line"></div>
+          <div class="step-num">03</div>
+          <div class="step-title">Sesi Foto</div>
+          <div class="step-desc">Datang ke studio, bersantai, dan nikmati sesi foto yang fun bersama tim profesional kami.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">Terima Hasil</div>
+          <div class="step-desc">File foto hasil editing dikirim dalam 3–5 hari kerja via Google Drive dalam resolusi penuh.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTOFOLIO -->
+  <section id="portofolio" class="porto">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Karya Kami</div>
+        <h2 class="section-title">Porto<em>folio</em></h2>
+      </div>
+      <p class="section-sub">Setiap foto bercerita. Lihat sebagian karya terbaik kami.</p>
+    </div>
+
+    <div class="porto-grid">
+      <div class="porto-item">
+        <div class="porto-bg porto-bg-1" style="height:100%;display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;color:rgba(255,255,255,0.15)">
+            <div style="font-size:80px">🎓</div>
+            <div style="font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:rgba(255,255,255,0.2);margin-top:8px">Wisuda</div>
+          </div>
+        </div>
+        <div class="porto-overlay">
+          <div class="porto-cat">Foto Wisuda</div>
+          <div class="porto-name">Momen Kelulusan Terbaik</div>
+        </div>
+      </div>
+      <div class="porto-item">
+        <div class="porto-bg porto-bg-2" style="height:100%;display:flex;align-items:center;justify-content:center;">
+          <div style="font-size:64px;opacity:0.2">💍</div>
+        </div>
+        <div class="porto-overlay">
+          <div class="porto-cat">Prewedding</div>
+          <div class="porto-name">Cinta yang Abadi</div>
+        </div>
+      </div>
+      <div class="porto-item">
+        <div class="porto-bg porto-bg-3" style="height:100%;display:flex;align-items:center;justify-content:center;">
+          <div style="font-size:64px;opacity:0.2">👨‍👩‍👧</div>
+        </div>
+        <div class="porto-overlay">
+          <div class="porto-cat">Keluarga</div>
+          <div class="porto-name">Kebersamaan Hangat</div>
+        </div>
+      </div>
+      <div class="porto-item">
+        <div class="porto-bg porto-bg-4" style="height:100%;display:flex;align-items:center;justify-content:center;">
+          <div style="font-size:64px;opacity:0.2">🧑‍💼</div>
+        </div>
+        <div class="porto-overlay">
+          <div class="porto-cat">Portrait</div>
+          <div class="porto-name">Tampil Profesional</div>
+        </div>
+      </div>
+      <div class="porto-item">
+        <div class="porto-bg porto-bg-5" style="height:100%;display:flex;align-items:center;justify-content:center;">
+          <div style="font-size:64px;opacity:0.2">👶</div>
+        </div>
+        <div class="porto-overlay">
+          <div class="porto-cat">Maternity</div>
+          <div class="porto-name">Calon Buah Hati</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section id="testimoni" class="testimoni">
+    <div class="testimoni-inner">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">Kata Mereka</div>
+          <h2 class="section-title">Klien <em>Bahagia</em></h2>
+        </div>
+        <p class="section-sub">Kepuasan klien adalah prioritas utama kami.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Hasilnya luar biasa! Foto wisudaku terlihat sangat profesional dan natural. Fotografernya juga ramah dan sabar banget."</p>
+          <div class="testi-divider"></div>
+          <div class="testi-name">Anisa Rahmawati</div>
+          <div class="testi-role">Sesi Foto Wisuda · S1 Universitas Indonesia</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Studio nya bersih dan nyaman, konsep foto prewedding kami persis seperti yang kami bayangkan. Rekomen banget!"</p>
+          <div class="testi-divider"></div>
+          <div class="testi-name">Budi & Rina</div>
+          <div class="testi-role">Sesi Prewedding · Paket Premium</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Foto keluarga kami jadi kenangan yang sangat berharga. Anak-anak pun enjoy selama sesi foto. Terima kasih Studio Cahaya!"</p>
+          <div class="testi-divider"></div>
+          <div class="testi-name">Keluarga Santoso</div>
+          <div class="testi-role">Sesi Foto Keluarga · 6 Orang</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="kontak">
+    <div class="kontak-left">
+      <div class="section-eyebrow">Hubungi Kami</div>
+      <h2 class="section-title">Siap Buat <em>Momen</em> Terbaik?</h2>
+      <p>Jangan tunda lagi — pesan sesi fotomu sekarang dan abadikan momen berharga bersama orang-orang tercinta.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-info">
+            <strong>WhatsApp</strong>
+            <span>+62 812-3456-7890</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-info">
+            <strong>Alamat Studio</strong>
+            <span>Jl. Matahari No. 24, Kebayoran Baru, Jakarta Selatan</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📸</div>
+          <div class="contact-info">
+            <strong>Instagram</strong>
+            <span>@studiocahaya.id</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="kontak-right">
+      <div class="form-title">Booking Sesi Foto</div>
+      <div class="form-group">
+        <label>Nama Lengkap</label>
+        <input type="text" placeholder="Nama kamu..." />
+      </div>
+      <div class="form-group">
+        <label>Nomor WhatsApp</label>
+        <input type="tel" placeholder="08xxxxxxxxxx" />
+      </div>
+      <div class="form-group">
+        <label>Pilih Paket</label>
+        <select>
+          <option value="">-- Pilih paket --</option>
+          <option>Foto Wisuda — Rp 299.000</option>
+          <option>Foto Prewedding — Rp 599.000</option>
+          <option>Foto Keluarga — Rp 399.000</option>
+          <option>Portrait Profesional — Rp 149.000</option>
+          <option>Foto Bayi & Maternity — Rp 499.000</option>
+          <option>Foto Produk — Rp 249.000</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tanggal yang Diinginkan</label>
+        <input type="date" />
+      </div>
+      <div class="form-group">
+        <label>Pesan Tambahan</label>
+        <textarea placeholder="Ceritakan konsep atau keinginan kamu..."></textarea>
+      </div>
+      <button class="btn-submit" onclick="bookViaWA()">📅 Kirim Booking via WhatsApp</button>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <div class="map-section">
+    <div class="map-inner">
+      <div class="map-top">
+        <div>
+          <div class="section-eyebrow">Lokasi</div>
+          <h2 class="section-title" style="font-size:36px">Temukan <em>Studio Kami</em></h2>
+        </div>
+
+      </div>
+      <!-- Map Visual -->
+      <div style="
+        width:100%; height:380px;
+        background: linear-gradient(135deg, #1A1814 0%, #2C2416 40%, #3D3227 100%);
+        position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center;
+      ">
+        <!-- Grid lines decoration -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#C9A84C" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)"/>
+        </svg>
+        <!-- Roads decoration -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="190" x2="100%" y2="190" stroke="#C9A84C" stroke-width="3"/>
+          <line x1="0" y1="210" x2="100%" y2="210" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="320" y1="0" x2="320" y2="100%" stroke="#C9A84C" stroke-width="3"/>
+          <line x1="340" y1="0" x2="340" y2="100%" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="0" y1="90" x2="100%" y2="90" stroke="#C9A84C" stroke-width="1"/>
+          <line x1="0" y1="290" x2="100%" y2="290" stroke="#C9A84C" stroke-width="1"/>
+          <line x1="150" y1="0" x2="150" y2="100%" stroke="#C9A84C" stroke-width="1"/>
+          <line x1="550" y1="0" x2="550" y2="100%" stroke="#C9A84C" stroke-width="1"/>
+          <line x1="750" y1="0" x2="750" y2="100%" stroke="#C9A84C" stroke-width="1"/>
+          <!-- Block fills -->
+          <rect x="0" y="0" width="148" height="88" fill="#C9A84C" opacity="0.04"/>
+          <rect x="342" y="212" width="206" height="76" fill="#C9A84C" opacity="0.04"/>
+          <rect x="152" y="92" width="166" height="96" fill="#C9A84C" opacity="0.06"/>
+        </svg>
+        <!-- Pin -->
+        <div style="position:relative;z-index:2;text-align:center;">
+          <div style="
+            width:64px;height:64px;
+            background:var(--gold);
+            border-radius:50% 50% 50% 0;
+            transform:rotate(-45deg);
+            margin:0 auto 16px;
+            box-shadow: 0 8px 32px rgba(201,168,76,0.5);
+            display:flex;align-items:center;justify-content:center;
+          ">
+            <span style="transform:rotate(45deg);font-size:26px;">📷</span>
+          </div>
+          <div style="
+            background:rgba(26,24,20,0.9);
+            border:1px solid rgba(201,168,76,0.3);
+            padding:16px 28px;
+            backdrop-filter:blur(8px);
+          ">
+            <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#F5F0E8;margin-bottom:4px;">Foto Studio Cahaya</div>
+            <div style="font-size:13px;color:#9E9589;">Jl. Matahari No. 24, Kebayoran Baru</div>
+            <div style="font-size:13px;color:#9E9589;">Jakarta Selatan</div>
+          </div>
+          <a href="https://maps.google.com/?q=Kebayoran+Baru+Jakarta+Selatan" target="_blank" style="
+            display:inline-block;margin-top:16px;
+            background:var(--gold);color:#1A1814;
+            padding:10px 24px;font-size:12px;
+            font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+            text-decoration:none;
+          ">Buka di Google Maps →</a>
+        </div>
+      </div>
+      <div class="jam-buka">
+        <div class="jam-item">
+          <span class="jam-day">Senin – Jumat</span>
+          <span class="jam-time">09.00 – 18.00</span>
+        </div>
+        <div class="jam-item">
+          <span class="jam-day">Sabtu</span>
+          <span class="jam-time">08.00 – 20.00</span>
+        </div>
+        <div class="jam-item">
+          <span class="jam-day">Minggu</span>
+          <span class="jam-time">09.00 – 17.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Foto Studio <span>Cahaya</span></div>
+          <div class="footer-tagline">"Setiap momen layak untuk diabadikan."</div>
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" title="Instagram">📸</a>
+          <a href="#" class="social-btn" title="TikTok">🎵</a>
+          <a href="#" class="social-btn" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2024 <span>Foto Studio Cahaya</span>. All rights reserved.</div>
+        <div class="footer-copy">Jl. Matahari No. 24, Kebayoran Baru, Jakarta Selatan</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WA Float -->
+  <a href="https://wa.me/6281234567890?text=Halo%20Studio%20Cahaya%2C%20saya%20ingin%20tanya%20tentang%20paket%20foto" class="wa-float" target="_blank" title="Chat WhatsApp">💬</a>
+
+  <script>
+    function bookViaWA() {
+      const nama = document.querySelectorAll('input')[0].value || 'Pelanggan';
+      const paket = document.querySelector('select').value || 'belum dipilih';
+      const pesan = `Halo Studio Cahaya! 👋%0A%0ASaya *${nama}* ingin booking sesi foto.%0APaket: *${paket}*%0A%0AMohon informasi lebih lanjut. Terima kasih!`;
+      window.open(`https://wa.me/6281234567890?text=${pesan}`, '_blank');
+    }
+
+    // Scroll reveal sederhana
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.layanan-card, .testi-card, .porto-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
